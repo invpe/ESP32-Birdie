@@ -50,13 +50,14 @@
 #include <ArduinoOTA.h>
 #include <utility>   
 
+#include <ESPmDNS.h>
 #include <WebServer.h>
 #include <Adafruit_NeoPixel.h>
 #include "FS.h"
 #include "SPIFFS.h"
 
-#define WIFI_AP "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-#define WIFI_PASS "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
+#define WIFI_AP "AAAAAAAAAAAAAAAAAAAAAAA"
+#define WIFI_PASS "BBBBBBBBBBBBBBBBBBBBBB"
 
 #define CONFIG_I2S_BCK_PIN -1
 #define CONFIG_I2S_LRCK_PIN 5
@@ -1083,6 +1084,14 @@ void setup() {
     });
   ArduinoOTA.setHostname("BIRDIE");
   ArduinoOTA.begin();
+
+
+  // Ustawienie mDNS
+  if (MDNS.begin("esp32.birdie")) {
+    Serial.println("mDNS ON");
+  }
+
+
   pixels.setPixelColor(0, 0, 0, 0);
   pixels.show();
 }
