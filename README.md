@@ -4,6 +4,10 @@
 
 A $5 Microchip That Learns Bird Songs – Totally Offline!
 
+https://www.instructables.com/Smarter-Than-You-Think-DIY-AI-Bird-Detector-on-ESP/
+
+
+
 Have you ever wondered what kind of birds are singing in your garden?
 At what time of day or season they appear?
 
